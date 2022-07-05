@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+.home {
+  width: 100vw;
+  height: 100vh;
+  /* background-color: coral; */
+  /* https://img.freepik.com/free-photo/technological-background-purple-with-code-elements-lights-lines_272306-164.jpg?w=2000 */
+  background-image: url("https://img.freepik.com/free-photo/technological-background-purple-with-code-elements-lights-lines_272306-164.jpg?w=2000");
+}
+
+.navbar {
+  width: 100vw;
+  height: 7.5vh;
+  display: flex;
+  padding-left: 7.5vw;
+}
+.logo {
+  width: 10vw;
+  height: 7.5vh;
+}
+.nav {
+  width: 50vw;
+  height: 7.5vh;
+}
+.nav ul {
+  height: 100%;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav ul li {
+  width: 100px;
+  height: 5vh;
+  color: #fff;
+  font-weight: 700;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 55px;
+  cursor: pointer;
+}
+.nav ul li.active {
+  border: 1px solid #5e30cd;
+}
