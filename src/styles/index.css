@@ -9,14 +9,18 @@
   height: 100vh;
   /* background-color: coral; */
   /* https://img.freepik.com/free-photo/technological-background-purple-with-code-elements-lights-lines_272306-164.jpg?w=2000 */
-  background-image: url("https://img.freepik.com/free-photo/technological-background-purple-with-code-elements-lights-lines_272306-164.jpg?w=2000");
+  /* background-image: url("https://img.freepik.com/free-photo/technological-background-purple-with-code-elements-lights-lines_272306-164.jpg?w=2000"); */
 }
 
 .navbar {
+  background-color: transparent;
   width: 100vw;
   height: 7.5vh;
   display: flex;
   padding-left: 7.5vw;
+  z-index: 2;
+  position: sticky;
+  background: #00000020;
 }
 .logo {
   width: 10vw;
@@ -47,4 +51,83 @@
 }
 .nav ul li.active {
   border: 1px solid #5e30cd;
+}
+.banner {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  /* background-image: url("https://img.freepik.com/free-photo/technological-background-purple-with-code-elements-lights-lines_272306-164.jpg?w=2000"); */
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: flex;
+  align-items: flex-end;
+}
+.banner-image {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: -2;
+  object-fit: cover;
+}
+.banner::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  background-color: #00000050;
+}
+.banner-content {
+  width: 50vw;
+  height: 60vh;
+  padding: 5vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.banner-title {
+  font-size: 4rem;
+  font-weight: 700;
+  color: #5e30cd;
+}
+.banner-subtitle-container {
+  display: flex;
+  align-items: center;
+  color: #fff;
+}
+.banner-subtitle-icon {
+  width: 25px;
+  height: 25px;
+  border-radius: 55px;
+  background-color: #5e30cd;
+  margin-right: 1rem;
+}
+.banner-subtitle {
+  width: 15vw;
+}
+.banner-indicator-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 20vw;
+}
+.banner-indicator {
+  width: 20px;
+  height: 20px;
+  border-radius: 55px;
+  align-items: center;
+  background-color: aquamarine;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+.banner-indicator:hover {
+  transform: scale(1.2);
+}
+.banner-indicator.active {
+  background-color: #5e30cd;
 }
