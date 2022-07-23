@@ -1,0 +1,116 @@
+.banner {
+  position: absolute;
+  /* background-color: red; */
+  width: 100vw;
+  height: 80vh;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: flex;
+  align-items: flex-end;
+}
+.banner-image {
+  position: absolute;
+  width: 90vw;
+  height: 60vh;
+  border-radius: 10px;
+  top: 10vh;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -2;
+  object-fit: cover;
+  transition: opacity ease-in-out 0.8s;
+  opacity: 0;
+}
+
+.banner-image.active {
+  opacity: 1;
+}
+
+.banner::before {
+  content: "";
+  position: absolute;
+  position: absolute;
+  width: 90vw;
+  height: 60vh;
+  border-radius: 10px;
+  top: 10vh;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -1;
+  background-color: #00000050;
+}
+.banner-content {
+  position: absolute;
+  top: 15%;
+  left: 25%;
+  width: 60vw;
+  padding: 5vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  transition: opacity ease-in-out 0.8s;
+  opacity: 0;
+}
+.banner-content.active {
+  opacity: 1;
+}
+.banner-title {
+  font-size: 4rem;
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+}
+.banner-subtitle-container {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  color: #fff;
+}
+.banner-subtitle-icon-container {
+  width: 55px;
+  height: 55px;
+  background-color: var(--secondary);
+  border-radius: 55px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 1rem;
+  overflow: hidden;
+}
+.banner-subtitle-icon {
+  width: 45px;
+  height: 45px;
+}
+.banner-subtitle {
+  width: 200px;
+  letter-spacing: 1px;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+.banner-indicator-container {
+  position: absolute;
+  top: 65%;
+  right: 10%;
+  display: flex;
+  align-items: center;
+}
+.banner-indicator {
+  width: 15px;
+  height: 15px;
+  border-radius: 55px;
+  align-items: center;
+  background-color: var(--text-primary);
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  margin: 0 1rem;
+}
+.banner-indicator:hover {
+  transform: scale(0.8);
+}
+.banner-indicator.active {
+  transform: scale(1.5);
+  background-color: var(--secondary);
+}
