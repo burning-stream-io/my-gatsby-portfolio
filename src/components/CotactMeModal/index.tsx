@@ -125,7 +125,7 @@ const ContactMeModal = ({ isOpen, onClose }: Props) => {
         <div className="contact-form-button-container">
           <Button
             className={!isValid ? "button-danger" : ""}
-            disabled={isValid ? false : true}
+            disabled={!isValid}
             type="submit"
             title="send"
             icon={

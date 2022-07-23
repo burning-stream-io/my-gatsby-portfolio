@@ -22,7 +22,7 @@ const Header: FC = () => {
 
   const themeFromLocalStorage = localStorage.getItem("theme");
   const [isToggled, setIsToggled] = useState(
-    themeFromLocalStorage && themeFromLocalStorage === "light" ? false : true
+    !(themeFromLocalStorage && themeFromLocalStorage === "light")
   );
   const handleToggle = () => {
     setIsToggled((prev) => {

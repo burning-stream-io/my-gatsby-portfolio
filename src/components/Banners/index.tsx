@@ -58,14 +58,22 @@ const Banners = () => {
             className={`banner-content ${activeBanner === i ? "active" : ""}`}
           >
             <h1 className="banner-title">{banners[i].node.title}</h1>
+            {/*<p className="banner-subtitle">{banners[i].node.subtitle}</p>*/}
+            <ul className="banner-list">
+              <li>“Any fool can write code that a computer can understand. Good programmers write code that humans can understand.” – Martin Fowler</li>
+              <li>“First, solve the problem. Then, write the code.” – John Johnson</li>
+              <li>“Experience is the name everyone gives to their mistakes.” – Oscar Wilde</li>
+              <li> In order to be irreplaceable, one must always be different” – Coco Chanel</li>
+              <li>Learn continually. There is always "one more thing to learn" - Steve Jobs  </li>
+            </ul>
             <div className="banner-subtitle-container">
-              <div className="banner-subtitle-icon-container">
-                <img
-                  className="banner-subtitle-icon"
-                  src={banners[i].node.icon.file.url}
-                />
-              </div>
-              <p className="banner-subtitle">{banners[i].node.subtitle}</p>
+              {/*<div className="banner-subtitle-icon-container">*/}
+              {/*  <img*/}
+              {/*    className="banner-subtitle-icon"*/}
+              {/*    src={banners[i].node.icon.file.url}*/}
+              {/*    */}
+              {/*  />*/}
+              {/*</div>*/}
             </div>
           </div>
         </>

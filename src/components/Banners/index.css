@@ -29,7 +29,6 @@
 .banner::before {
   content: "";
   position: absolute;
-  position: absolute;
   width: 90vw;
   height: 60vh;
   border-radius: 10px;
@@ -37,18 +36,18 @@
   left: 50%;
   transform: translateX(-50%);
   z-index: -1;
-  background-color: #00000050;
+  background-color: #000000 ;
+  opacity: 0.3;
 }
 .banner-content {
   position: absolute;
-  top: 15%;
-  left: 25%;
-  width: 60vw;
-  padding: 5vw;
+  top: 25vh;
+  right: 5%;
+  width: 62vw;
+  padding: 0 2rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
   transition: opacity ease-in-out 0.8s;
   opacity: 0;
 }
@@ -59,8 +58,18 @@
   font-size: 4rem;
   font-weight: 700;
   color: #fff;
-  text-transform: uppercase;
-  text-align: center;
+}
+.banner-list{
+  width: 65%;
+}
+.banner-list li {
+  padding-left: 0.5rem;
+  letter-spacing: normal;
+  font-weight: normal;
+  color: var(--text-tertiary);
+  line-height: 1.5rem;
+  margin-top: 1rem;
+  text-align: justify;
 }
 .banner-subtitle-container {
   margin-top: 1rem;
@@ -83,12 +92,7 @@
   width: 45px;
   height: 45px;
 }
-.banner-subtitle {
-  width: 200px;
-  letter-spacing: 1px;
-  font-weight: normal;
-  text-transform: uppercase;
-}
+
 .banner-indicator-container {
   position: absolute;
   top: 65%;
