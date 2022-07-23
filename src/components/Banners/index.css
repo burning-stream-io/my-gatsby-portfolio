@@ -1,6 +1,5 @@
 .banner {
   position: absolute;
-  /* background-color: red; */
   width: 100vw;
   height: 80vh;
   top: 0;
@@ -113,4 +112,50 @@
 .banner-indicator.active {
   transform: scale(1.5);
   background-color: var(--secondary);
+}
+
+/* mobile  */
+
+@media (max-width: 768px) {
+  .banner-image {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    top: 0;
+    left: 0;
+    transform: translateX(0);
+    width: 100vw;
+  }
+  .banner::before {
+    top: 0;
+    left: 0;
+    transform: translateX(0);
+    width: 100vw;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+  .banner-content {
+    left: 0;
+    width: 100vw;
+  }
+  .banner-title {
+    font-size: 2rem;
+    width: 100%;
+    text-align: center;
+  }
+  .banner-subtitle-container {
+    margin-top: 2rem;
+  }
+  .banner-subtitle {
+    font-size: 1rem;
+    width: 70%;
+    text-align: center;
+  }
+  .banner-indicator-container {
+    top: 55%;
+    right: 0;
+  }
+  .banner-subtitle-icon-container {
+    width: 40px;
+    height: 40px;
+  }
 }
