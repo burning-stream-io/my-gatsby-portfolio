@@ -19,8 +19,9 @@ const Header: FC = () => {
     { name: "About", path: "/about" },
     { name: "Contact", path: "/contact" },
   ];
+  const isBrowser = () => typeof window !== "undefined"
 
-  const themeFromLocalStorage = localStorage.getItem("theme");
+  const themeFromLocalStorage = isBrowser()?localStorage.getItem("theme") :null;
   const [isToggled, setIsToggled] = useState(
     !(themeFromLocalStorage && themeFromLocalStorage === "light")
   );

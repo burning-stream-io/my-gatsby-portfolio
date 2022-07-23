@@ -42,12 +42,14 @@ const getTransitionStyles: (status: TransitionStatus) => CSSProperties = (
       return {};
   }
 };
+
 const layout: FC<Props> = ({ children, location }) => {
+const isBrowser = () => typeof window !== "undefined"
   const firstTimeRun = useRef(true);
   useEffect(() => {
     if (firstTimeRun.current) {
       const body = document.querySelector("body");
-      const themeFromLocalStorage = localStorage.getItem("theme");
+      const themeFromLocalStorage =isBrowser()? localStorage.getItem("theme") :null;
 
       if (body) {
         themeFromLocalStorage
