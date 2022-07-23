@@ -1,0 +1,35 @@
+.button {
+  background-color: #4caf50;
+  border: none;
+  cursor: pointer;
+  width: 175px;
+  height: 40px;
+  border-radius: 50px;
+  transition: transform 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.button-danger {
+  background-color: #f44336;
+}
+.button:hover {
+  transform: scale(1.1);
+}
+.button-title {
+  font-size: 11px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-right: 10px;
+}
+.button-icon {
+  width: 15px;
+  height: 15px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
