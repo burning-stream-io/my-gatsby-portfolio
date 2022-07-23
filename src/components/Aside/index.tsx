@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef, FC } from "react";
+import React, { useEffect, useState, FC } from "react";
 import "./index.css";
 import Typewriter from "typewriter-effect";
 import { StaticImage } from "gatsby-plugin-image";
