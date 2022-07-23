@@ -89,7 +89,12 @@
 .full-card-list-item .full-card-caption {
   color: var(--text-secondary);
 }
-
+.half-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-direction: row;
+}
 .half-card {
   width: 45%;
   text-decoration: none;
@@ -183,6 +188,11 @@ a.half-card-caption:hover {
   }
   .full-card-caption {
     font-size: 14px;
+  }
+  .half-cards-container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
   .half-card {
     width: 90%;
