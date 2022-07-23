@@ -64,7 +64,7 @@ body {
   margin-right: 5vw;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .main-content {
     width: 100vw;
     margin-top: 0;
