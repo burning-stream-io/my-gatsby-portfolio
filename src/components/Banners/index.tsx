@@ -52,7 +52,6 @@ const quotes=[
 ]
   return (
     <div className="banner">
-      {/* "https://img.freepik.com/free-photo/technological-background-purple-with-code-elements-lights-lines_272306-164.jpg?w=2000" */}
       {banners.map((banner, i) => (
         <>
           <img
@@ -64,42 +63,18 @@ const quotes=[
             className={`banner-content ${activeBanner === i ? "active" : ""}`}
           >
             <h1 className="banner-title">{banners[i].node.title}</h1>
-            {/*<p className="banner-subtitle">{banners[i].node.subtitle}</p>*/}
             <ul className="banner-list">
               {
                 quotes.map( (quote,i)=><li key={i}>{quote}</li>)
               }
             </ul>
             <div className="banner-subtitle-container">
-              {/*<div className="banner-subtitle-icon-container">*/}
-              {/*  <img*/}
-              {/*    className="banner-subtitle-icon"*/}
-              {/*    src={banners[i].node.icon.file.url}*/}
-              {/*    */}
-              {/*  />*/}
-              {/*</div>*/}
+
             </div>
           </div>
         </>
       ))}
-      {/*<div className="banner-indicator-container">*/}
-      {/*  {banners.map((_banner, i) => (*/}
-      {/*    <div*/}
-      {/*      onClick={() => {*/}
-      {/*        clearInterval(sliderRef.current);*/}
-      {/*        setActiveBanner(i);*/}
-      {/*        sliderRef.current = setInterval(() => {*/}
-      {/*          setActiveBanner(*/}
-      {/*            (prevState) => (prevState + 1) % banners.length*/}
-      {/*          );*/}
-      {/*        }, 5000);*/}
-      {/*      }}*/}
-      {/*      className={`banner-indicator ${*/}
-      {/*        i === activeBanner ? "active" : null*/}
-      {/*      }`}*/}
-      {/*    ></div>*/}
-      {/*  ))}*/}
-      {/*</div>*/}
+
     </div>
   );
 };
