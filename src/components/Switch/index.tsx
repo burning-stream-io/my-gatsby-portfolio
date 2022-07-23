@@ -1,27 +1,18 @@
-import React, { useState } from "react";
+import React, { FC } from "react";
 import "./index.css";
-const Switch = () => {
-  const themeFromLocalStorage = localStorage.getItem("theme");
-  const [isToggled, setIsToggled] = useState(
-    themeFromLocalStorage && themeFromLocalStorage === "light" ? false : true
-  );
-  const handleToggle = () => {
-    setIsToggled((prev) => {
-      const theme = !prev ? "dark" : "light";
-      const body = document.querySelector("body");
-      if (body) {
-        body.setAttribute("data-theme", theme);
-        localStorage.setItem("theme", theme);
-      }
-      return !prev;
-    });
-  };
+
+type Props = {
+  onToggle: () => void;
+  toggled: boolean;
+};
+
+const Switch: FC<Props> = ({ onToggle, toggled }) => {
   return (
     <button
-      onClick={handleToggle}
-      className={`toggler ${isToggled ? "toggled" : ""}`}
+      onClick={onToggle}
+      className={`toggler ${toggled ? "toggled" : ""}`}
     >
-      <span className={`swicth ${isToggled ? "switched" : ""}`} />
+      <span className={`swicth ${toggled ? "switched" : ""}`} />
     </button>
   );
 };
