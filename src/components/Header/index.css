@@ -1,0 +1,68 @@
+.navbar {
+  position: sticky;
+  top: 1vw;
+  background-color: transparent;
+  width: 99vw;
+  margin: 0 auto;
+  height: 9vh;
+  display: flex;
+  padding-left: 7.5vw;
+  z-index: 3;
+  background-color: var(--primary);
+  box-shadow: 0 2px 4px 0 rgb(0 0 0 / 60%);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10vw;
+  padding-right: 10vw;
+  height: 7.5vh;
+  color: var(--text-primary);
+  font-weight: 700;
+  font-size: 12px;
+}
+.nav {
+  width: 50vw;
+  height: 7.5vh;
+}
+.nav ul {
+  height: 100%;
+  list-style-type: none;
+  display: flex;
+  padding-right: 20vw;
+  justify-content: space-between;
+  align-items: center;
+}
+.list-button {
+  /* background-color: coral; */
+  padding: 10px;
+  height: 7.5vh;
+  position: relative;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 11px;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.list-button::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 5px;
+  z-index: 1;
+  border-top: dashed 2px var(--secondary);
+}
+.list-button.active::after {
+  animation: bounceWidth 0.7s ease forwards;
+}
