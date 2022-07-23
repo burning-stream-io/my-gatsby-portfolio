@@ -43,7 +43,13 @@ const Banners = () => {
       clearInterval(sliderRef.current);
     };
   }, []);
-
+const quotes=[
+    `“Any fool can write code that a computer can understand. Good programmers write code that humans can understand.” – Martin Fowler`,
+    `“First, solve the problem. Then, write the code.” – John Johnson`,
+    `“Experience is the name everyone gives to their mistakes.” – Oscar Wilde`,
+    `In order to be irreplaceable, one must always be different” – Coco Chanel`,
+    `Learn continually. There is always "one more thing to learn" - Steve Jobs`
+]
   return (
     <div className="banner">
       {/* "https://img.freepik.com/free-photo/technological-background-purple-with-code-elements-lights-lines_272306-164.jpg?w=2000" */}
@@ -60,11 +66,9 @@ const Banners = () => {
             <h1 className="banner-title">{banners[i].node.title}</h1>
             {/*<p className="banner-subtitle">{banners[i].node.subtitle}</p>*/}
             <ul className="banner-list">
-              <li>“Any fool can write code that a computer can understand. Good programmers write code that humans can understand.” – Martin Fowler</li>
-              <li>“First, solve the problem. Then, write the code.” – John Johnson</li>
-              <li>“Experience is the name everyone gives to their mistakes.” – Oscar Wilde</li>
-              <li> In order to be irreplaceable, one must always be different” – Coco Chanel</li>
-              <li>Learn continually. There is always "one more thing to learn" - Steve Jobs  </li>
+              {
+                quotes.map( (quote,i)=><li key={i}>{quote}</li>)
+              }
             </ul>
             <div className="banner-subtitle-container">
               {/*<div className="banner-subtitle-icon-container">*/}
