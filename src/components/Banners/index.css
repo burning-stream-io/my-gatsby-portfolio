@@ -139,12 +139,23 @@
   }
   .banner-content {
     left: 0;
+    top: 10vh;
+    height: 50vh;
     width: 100vw;
   }
   .banner-title {
     font-size: 2rem;
     width: 100%;
     text-align: center;
+  }
+  .banner-list{
+    width: 100%;
+  }
+  .banner-list li {
+    padding-left: 0.5rem;
+    font-size: 12px;
+    line-height: 16px;
+    margin-top: 1rem;
   }
   .banner-subtitle-container {
     margin-top: 2rem;
