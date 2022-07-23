@@ -3,7 +3,7 @@ import { HalfCard } from "../components/Cards";
 import ContactMeModal from "../components/CotactMeModal";
 import Title from "../components/Title";
 
-const contact = () => {
+const Contact = () => {
   return (
     <div>
       <Title title={"Get in touch"} />
@@ -63,4 +63,4 @@ const contact = () => {
   );
 };
 
-export default contact;
+export default Contact;

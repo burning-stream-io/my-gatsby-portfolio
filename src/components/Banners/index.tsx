@@ -52,6 +52,7 @@ const Banners = () => {
           <img
             className={`banner-image ${activeBanner === i ? "active" : ""}`}
             src={banner.node.image[0].file.url}
+            alt={`banner-${i}`}
           />
           <div
             className={`banner-content ${activeBanner === i ? "active" : ""}`}
@@ -69,24 +70,24 @@ const Banners = () => {
           </div>
         </>
       ))}
-      <div className="banner-indicator-container">
-        {banners.map((_banner, i) => (
-          <div
-            onClick={() => {
-              clearInterval(sliderRef.current);
-              setActiveBanner(i);
-              sliderRef.current = setInterval(() => {
-                setActiveBanner(
-                  (prevState) => (prevState + 1) % banners.length
-                );
-              }, 5000);
-            }}
-            className={`banner-indicator ${
-              i === activeBanner ? "active" : null
-            }`}
-          ></div>
-        ))}
-      </div>
+      {/*<div className="banner-indicator-container">*/}
+      {/*  {banners.map((_banner, i) => (*/}
+      {/*    <div*/}
+      {/*      onClick={() => {*/}
+      {/*        clearInterval(sliderRef.current);*/}
+      {/*        setActiveBanner(i);*/}
+      {/*        sliderRef.current = setInterval(() => {*/}
+      {/*          setActiveBanner(*/}
+      {/*            (prevState) => (prevState + 1) % banners.length*/}
+      {/*          );*/}
+      {/*        }, 5000);*/}
+      {/*      }}*/}
+      {/*      className={`banner-indicator ${*/}
+      {/*        i === activeBanner ? "active" : null*/}
+      {/*      }`}*/}
+      {/*    ></div>*/}
+      {/*  ))}*/}
+      {/*</div>*/}
     </div>
   );
 };

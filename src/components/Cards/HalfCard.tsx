@@ -1,6 +1,5 @@
-import React, { ReactNode } from "react";
+import React  from "react";
 import { FC } from "react";
-import Rate from "../Rate";
 
 type Props = {
   icon: string;

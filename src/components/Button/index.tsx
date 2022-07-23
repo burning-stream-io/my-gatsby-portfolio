@@ -1,5 +1,5 @@
-import React, { FC, ReactNode, useRef } from "react";
-import "./button.css";
+import React, {FC, ReactNode, useRef} from "react";
+import "./index.css";
 type Props = {
   type?: "button" | "submit" | "reset";
   title?: string;
