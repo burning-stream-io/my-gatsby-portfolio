@@ -130,7 +130,16 @@
     background-color: var(--secondary);
 }
 
-/* mobile  */
+@media screen and (max-width: 1024px) {
+    .banner-content {
+        left: 37%;
+        width: 58vw;
+    }
+
+    .banner-list {
+        width: 90%;
+    }
+}
 
 @media (max-width: 768px) {
     .banner-image {
@@ -153,7 +162,7 @@
 
     .banner-content {
         left: 0;
-        top: 15vh;
+        top: 12vh;
         height: 50vh;
         width: 100vw;
     }
@@ -170,9 +179,9 @@
 
     .banner-list * {
         padding-left: 0.5rem;
-        font-size: 14px;
-        line-height: 18px;
-        margin-top: 1rem;
+        font-size: 0.75rem;
+        line-height: normal;
+        margin-bottom: 1rem;
     }
 
     .banner-subtitle-container {
@@ -195,3 +204,4 @@
         height: 40px;
     }
 }
+
