@@ -1,206 +1,249 @@
 .full-card {
-  background-color: var(--primary);
-  padding: 2rem;
-  border-radius: 5px;
-  position: relative;
-  margin: auto;
+    background-color: var(--primary);
+    padding: 2rem;
+    border-radius: 5px;
+    position: relative;
+    margin: auto;
 }
+
 .full-card::after {
-  content: "";
-  position: absolute;
-  bottom: 10px;
-  right: 20px;
-  transform: skewX(-15deg);
-  width: 5px;
-  height: 15px;
-  background-color: var(--secondary);
-  border-radius: 1px;
+    content: "";
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    transform: skewX(-15deg);
+    width: 5px;
+    height: 15px;
+    background-color: var(--secondary);
+    border-radius: 1px;
 }
+
 .full-card::before {
-  content: "";
-  position: absolute;
-  bottom: 10px;
-  right: 32px;
-  transform: skewX(-15deg);
-  width: 5px;
-  height: 15px;
-  background-color: var(--secondary);
-  border-radius: 1px;
+    content: "";
+    position: absolute;
+    bottom: 10px;
+    right: 32px;
+    transform: skewX(-15deg);
+    width: 5px;
+    height: 15px;
+    background-color: var(--secondary);
+    border-radius: 1px;
 }
+
 .full-card-header {
-  display: flex;
-  align-items: center;
-  margin-bottom: 1rem;
-}
-.full-card-header a {
-  font-size: 1.5rem;
-  font-weight: 500;
-  color: var(--text-primary);
-  cursor: pointer;
-  text-decoration: none;
-}
-.full-card-header-text p {
-  font-size: 1rem;
-  letter-spacing: normal;
-  color: var(--text-primary);
-}
-.full-card-logo {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-right: 1rem;
-}
-.full-card-logo img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  border-radius: 50%;
-}
-.full-card-date {
-  justify-self: flex-end;
-  flex: 1;
-  text-align: right;
-  font-size: 1.2rem;
-  font-weight: 500;
-  color: var(--text-primary);
-}
-.full-card-list {
-  list-style-type: none;
-  padding: 0 1rem;
-}
-.full-card-list-item::before {
-  content: "\2022";
-  font-weight: bold;
-  display: inline-block;
-  width: 1em;
-  margin-left: -1em;
-  color: var(--text-primary);
-}
-.full-card-caption {
-  color: var(--text-secondary);
-  letter-spacing: 0;
-  text-align: justify;
-  font-size: 14px;
-  line-height: 25px;
-}
-.full-card-list-item .full-card-caption {
-  color: var(--text-secondary);
-}
-.half-cards-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  flex-direction: row;
-}
-.half-card {
-  width: 45%;
-  text-decoration: none;
-  background-color: var(--primary);
-  padding: 1.5rem;
-  text-align: justify;
-  border-radius: 5px;
-  margin-bottom: 10%;
-}
-.half-card-header {
-  display: flex;
-  align-items: center;
-
-  margin-bottom: 1rem;
-}
-.half-card-icon {
-  width: 50px;
-  height: 50px;
-  margin-right: 20px;
-}
-.half-card-title {
-  color: var(--text-primary);
-  letter-spacing: 0;
-  font-size: 20px;
-  margin-top: 0.5rem;
-}
-.half-card-subtitle {
-  color: var(--text-secondary);
-  letter-spacing: 0;
-  font-size: 16px;
-}
-.half-card-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.half-card-caption {
-  color: var(--text-secondary);
-  letter-spacing: 0;
-  line-height: 25px;
-  font-size: 14px;
-  margin-top: 0.25rem;
-  margin-bottom: 0.75rem;
-}
-a.half-card-caption {
-  text-decoration: none;
-  transition: all 0.3s ease-in-out;
-}
-a.half-card-caption:hover {
-  color: var(--text-primary);
-}
-.half-card-footer-text {
-  font-size: 1rem;
-  font-weight: 500;
-  text-align: right;
-  letter-spacing: normal;
-  color: var(--text-primary);
-}
-/* mobile  */
-@media (max-width: 768px) {
-  .full-card {
-    width: 90%;
-  }
-  .full-card-header {
-    flex-direction: column;
-    justify-content: space-around;
+    display: flex;
     align-items: center;
-    width: 100%;
-    height: 200px;
-  }
-  .full-card-logo {
-    flex: 1;
-    width: 70%;
-  }
-
-  .full-card-header-text {
-    flex: 1;
-  }
-  .full-card-header-text * {
-    text-align: center;
     margin-bottom: 1rem;
-  }
-  .full-card-date {
-    flex: 1;
-  }
-  .full-card-header-text a {
-    font-size: 1.2rem;
-  }
-  .full-card-date {
+}
+
+.full-card-header a {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.full-card-header-text p {
     font-size: 1rem;
-  }
-  .full-card-caption {
-    font-size: 14px;
-  }
-  .half-cards-container {
-    flex-direction: column;
-    align-items: center;
+    letter-spacing: normal;
+    color: var(--text-primary);
+}
+
+.full-card-logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
     justify-content: center;
-  }
-  .half-card {
-    width: 90%;
-  }
-  .half-card-title {
-    font-size: 16px;
-  }
-  .half-card-caption {
+    align-items: center;
+    margin-right: 1rem;
+}
+
+.full-card-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+.full-card-date {
+    justify-self: flex-end;
+    flex: 1;
+    text-align: right;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.full-card-list {
+    list-style-type: none;
+    padding: 0 1rem;
+}
+
+.full-card-list-item::before {
+    content: "\2022";
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+    color: var(--text-primary);
+}
+
+.full-card-caption {
+    color: var(--text-secondary);
+    letter-spacing: 0;
+    text-align: justify;
     font-size: 14px;
-  }
+    line-height: 25px;
+}
+
+.full-card-list-item .full-card-caption {
+    color: var(--text-secondary);
+}
+
+.half-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.half-card {
+    width: 45%;
+    text-decoration: none;
+    background-color: var(--primary);
+    padding: 1.5rem;
+    text-align: justify;
+    border-radius: 5px;
+    margin-bottom: 10%;
+}
+
+.half-card-header {
+    display: flex;
+    align-items: center;
+
+    margin-bottom: 1rem;
+}
+
+.half-card-icon {
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+}
+
+.half-card-title {
+    color: var(--text-primary);
+    letter-spacing: 0;
+    font-size: 20px;
+    margin-top: 0.5rem;
+}
+
+.half-card-subtitle {
+    color: var(--text-secondary);
+    letter-spacing: 0;
+    font-size: 16px;
+}
+
+.half-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.half-card-caption {
+    color: var(--text-secondary);
+    letter-spacing: 0;
+    line-height: 25px;
+    font-size: 14px;
+    margin-top: 0.25rem;
+    margin-bottom: 0.75rem;
+}
+
+a.half-card-caption {
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+
+a.half-card-caption:hover {
+    color: var(--text-primary);
+}
+
+.half-card-footer-text {
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: right;
+    letter-spacing: normal;
+    color: var(--text-primary);
+}
+
+@media screen and (max-width: 1024px) {
+    .half-card-subtitle {
+        margin-top: 5px;
+        font-size: 12px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .full-card {
+        width: 90%;
+    }
+
+    .full-card-header {
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        height: 200px;
+    }
+
+    .full-card-logo {
+        flex: 1;
+        width: 70%;
+    }
+
+    .full-card-header-text {
+        flex: 1;
+    }
+
+    .full-card-header-text * {
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    .full-card-date {
+        flex: 1;
+    }
+
+    .full-card-header-text a {
+        font-size: 1.2rem;
+    }
+
+    .full-card-date {
+        font-size: 1rem;
+    }
+
+    .full-card-caption {
+        font-size: 14px;
+    }
+
+    .half-cards-container {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .half-card {
+        width: 90%;
+    }
+
+    .half-card-title {
+        font-size: 16px;
+    }
+
+
+    .half-card-caption {
+        font-size: 12px;
+    }
 }
