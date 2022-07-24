@@ -1,176 +1,197 @@
 .banner {
-  position: absolute;
-  width: 100vw;
-  height: 80vh;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  display: flex;
-  align-items: flex-end;
+    position: absolute;
+    width: 100vw;
+    height: 80vh;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: flex;
+    align-items: flex-end;
 }
+
 .banner-image {
-  position: absolute;
-  width: 90vw;
-  height: 60vh;
-  border-radius: 10px;
-  top: 10vh;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: -2;
-  object-fit: cover;
-  transition: opacity ease-in-out 0.8s;
-  opacity: 0;
+    position: absolute;
+    width: 90vw;
+    height: 60vh;
+    border-radius: 10px;
+    top: 10vh;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -2;
+    object-fit: cover;
+    transition: opacity ease-in-out 0.8s;
+    opacity: 0;
 }
 
 .banner-image.active {
-  opacity: 1;
+    opacity: 1;
 }
 
 .banner::before {
-  content: "";
-  position: absolute;
-  width: 90vw;
-  height: 60vh;
-  border-radius: 10px;
-  top: 10vh;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: -1;
-  background-color: #000000 ;
-  opacity: 0.3;
+    content: "";
+    position: absolute;
+    width: 90vw;
+    height: 60vh;
+    border-radius: 10px;
+    top: 10vh;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+    background-color: #000000;
+    opacity: 0.3;
 }
+
 .banner-content {
-  position: absolute;
-  top: 25vh;
-  right: 5%;
-  width: 62vw;
-  padding: 0 2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  transition: opacity ease-in-out 0.8s;
-  opacity: 0;
+    position: absolute;
+    top: 25vh;
+    right: 5%;
+    width: 62vw;
+    padding: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: opacity ease-in-out 0.8s;
+    opacity: 0;
 }
+
 .banner-content.active {
-  opacity: 1;
+    opacity: 1;
 }
+
 .banner-title {
-  font-size: 4rem;
-  font-weight: 700;
-  color: #fff;
+    font-size: 4rem;
+    font-weight: 700;
+    color: #fff;
 }
-.banner-list{
-  width: 65%;
+
+.banner-list {
+    width: 65%;
 }
-.banner-list li {
-  padding-left: 0.5rem;
-  letter-spacing: normal;
-  font-weight: normal;
-  color: var(--text-tertiary);
-  line-height: 1.5rem;
-  margin-top: 1rem;
-  text-align: justify;
+
+.banner-list * {
+    padding-left: 0.5rem;
+    letter-spacing: normal;
+    font-weight: normal;
+    color: var(--text-tertiary);
+    line-height: 1.5rem;
+    margin-top: 1rem;
+    text-align: justify;
 }
+
 .banner-subtitle-container {
-  margin-top: 1rem;
-  display: flex;
-  align-items: center;
-  color: #fff;
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    color: #fff;
 }
+
 .banner-subtitle-icon-container {
-  width: 55px;
-  height: 55px;
-  background-color: var(--secondary);
-  border-radius: 55px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-right: 1rem;
-  overflow: hidden;
+    width: 55px;
+    height: 55px;
+    background-color: var(--secondary);
+    border-radius: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1rem;
+    overflow: hidden;
 }
+
 .banner-subtitle-icon {
-  width: 45px;
-  height: 45px;
+    width: 45px;
+    height: 45px;
 }
 
 .banner-indicator-container {
-  position: absolute;
-  top: 65%;
-  right: 10%;
-  display: flex;
-  align-items: center;
+    position: absolute;
+    top: 65%;
+    right: 10%;
+    display: flex;
+    align-items: center;
 }
+
 .banner-indicator {
-  width: 15px;
-  height: 15px;
-  border-radius: 55px;
-  align-items: center;
-  background-color: var(--text-primary);
-  cursor: pointer;
-  transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
-  margin: 0 1rem;
+    width: 15px;
+    height: 15px;
+    border-radius: 55px;
+    align-items: center;
+    background-color: var(--text-primary);
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    margin: 0 1rem;
 }
+
 .banner-indicator:hover {
-  transform: scale(0.8);
+    transform: scale(0.8);
 }
+
 .banner-indicator.active {
-  transform: scale(1.5);
-  background-color: var(--secondary);
+    transform: scale(1.5);
+    background-color: var(--secondary);
 }
 
 /* mobile  */
 
 @media (max-width: 768px) {
-  .banner-image {
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-    top: 0;
-    left: 0;
-    transform: translateX(0);
-    width: 100vw;
-  }
-  .banner::before {
-    top: 0;
-    left: 0;
-    transform: translateX(0);
-    width: 100vw;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-  }
-  .banner-content {
-    left: 0;
-    top: 10vh;
-    height: 50vh;
-    width: 100vw;
-  }
-  .banner-title {
-    font-size: 2rem;
-    width: 100%;
-    text-align: center;
-  }
-  .banner-list{
-    width: 100%;
-  }
-  .banner-list li {
-    padding-left: 0.5rem;
-    font-size: 12px;
-    line-height: 16px;
-    margin-top: 1rem;
-  }
-  .banner-subtitle-container {
-    margin-top: 2rem;
-  }
-  .banner-subtitle {
-    font-size: 1rem;
-    width: 70%;
-    text-align: center;
-  }
-  .banner-indicator-container {
-    top: 55%;
-    right: 0;
-  }
-  .banner-subtitle-icon-container {
-    width: 40px;
-    height: 40px;
-  }
+    .banner-image {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        top: 0;
+        left: 0;
+        transform: translateX(0);
+        width: 100vw;
+    }
+
+    .banner::before {
+        top: 0;
+        left: 0;
+        transform: translateX(0);
+        width: 100vw;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+
+    .banner-content {
+        left: 0;
+        top: 15vh;
+        height: 50vh;
+        width: 100vw;
+    }
+
+    .banner-title {
+        font-size: 2rem;
+        width: 100%;
+        text-align: center;
+    }
+
+    .banner-list {
+        width: 100%;
+    }
+
+    .banner-list * {
+        padding-left: 0.5rem;
+        font-size: 14px;
+        line-height: 18px;
+        margin-top: 1rem;
+    }
+
+    .banner-subtitle-container {
+        margin-top: 2rem;
+    }
+
+    .banner-subtitle {
+        font-size: 1rem;
+        width: 70%;
+        text-align: center;
+    }
+
+    .banner-indicator-container {
+        top: 55%;
+        right: 0;
+    }
+
+    .banner-subtitle-icon-container {
+        width: 40px;
+        height: 40px;
+    }
 }
