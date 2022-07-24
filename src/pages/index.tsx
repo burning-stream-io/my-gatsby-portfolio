@@ -31,7 +31,7 @@ const Home: FC = () => {
         <HalfCard
           title="Node.js"
           caption="Build scalable network applications with Node.js, Express, and Socket.io."
-          icon="https://cdn.worldvectorlogo.com/logos/nodejs.svg"
+          icon="https://cdn.worldvectorlogo.com/logos/nodejs-icon.svg"
           rate={3.5}
         />
 
