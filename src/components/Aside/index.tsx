@@ -12,7 +12,7 @@ import {
 import Button from "../Button";
 import gsap from "gsap";
 import {ScrollTrigger} from "gsap/dist/ScrollTrigger";
-import ContactMeModal from "../CotactMeModal";
+import ContactMeModal from "../ContactMeModal";
 
 gsap.registerPlugin(ScrollTrigger);
 type Props = {
