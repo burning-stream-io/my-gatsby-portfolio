@@ -1,7 +1,7 @@
 .banner {
     position: absolute;
     width: 100vw;
-    height: 80vh;
+    height: 70vh;
     top: 0;
     left: 0;
     z-index: 1;
@@ -12,7 +12,7 @@
 .banner-image {
     position: absolute;
     width: 90vw;
-    height: 60vh;
+    height: 50vh;
     border-radius: 10px;
     top: 10vh;
     left: 50%;
@@ -31,7 +31,7 @@
     content: "";
     position: absolute;
     width: 90vw;
-    height: 60vh;
+    height: 50vh;
     border-radius: 10px;
     top: 10vh;
     left: 50%;
@@ -47,9 +47,6 @@
     right: 5%;
     width: 62vw;
     padding: 0 2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     transition: opacity ease-in-out 0.8s;
     opacity: 0;
 }
@@ -59,7 +56,7 @@
 }
 
 .banner-title {
-    font-size: 4rem;
+    font-size: 2rem;
     font-weight: 700;
     color: #fff;
 }
@@ -76,6 +73,7 @@
     line-height: 1.5rem;
     margin-top: 1rem;
     text-align: justify;
+    font-size: 1rem;
 }
 
 .banner-subtitle-container {
@@ -87,6 +85,7 @@
 
 .banner-subtitle-icon-container {
     width: 55px;
+
     height: 55px;
     background-color: var(--secondary);
     border-radius: 55px;
@@ -102,12 +101,19 @@
     height: 45px;
 }
 
-.banner-indicator-container {
+.banner-scroll-container {
     position: absolute;
     top: 65%;
-    right: 10%;
+    right: 5%;
     display: flex;
+    width: 150px;
+    height: 150px;
     align-items: center;
+    z-index: 9999;
+}
+
+.banner-scroll {
+    cursor: pointer;
 }
 
 .banner-indicator {
@@ -171,6 +177,7 @@
         font-size: 2rem;
         width: 100%;
         text-align: center;
+        margin-bottom: 1rem;
     }
 
     .banner-list {
@@ -194,6 +201,20 @@
         text-align: center;
     }
 
+    .banner-scroll-container {
+        top: auto;
+        bottom: 22%;
+        right: 50%;
+        transform: translateX(50%);
+        display: flex;
+        justify-content: center;
+    }
+
+    .banner-scroll {
+        width: 100px;
+        height: 70px;
+    }
+
     .banner-indicator-container {
         top: 55%;
         right: 0;
@@ -203,5 +224,6 @@
         width: 40px;
         height: 40px;
     }
+
 }
 

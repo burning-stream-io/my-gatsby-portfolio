@@ -1,4 +1,4 @@
-import React, { FC, CSSProperties, ReactNode, useEffect, useRef } from "react";
+import React, { CSSProperties, FC, ReactNode, useEffect, useRef } from "react";
 import {
   Transition,
   TransitionGroup,
@@ -8,6 +8,7 @@ import Header from "../components/Header";
 import Banners from "../components/Banners";
 import Aside from "../components/Aside";
 import "./index.css";
+import { isBrowser } from "../utilities";
 
 type Props = {
   children: ReactNode;
@@ -44,12 +45,13 @@ const getTransitionStyles: (status: TransitionStatus) => CSSProperties = (
 };
 
 const layout: FC<Props> = ({ children, location }) => {
-const isBrowser = () => typeof window !== "undefined"
   const firstTimeRun = useRef(true);
   useEffect(() => {
     if (firstTimeRun.current) {
       const body = document.querySelector("body");
-      const themeFromLocalStorage =isBrowser()? localStorage.getItem("theme") :null;
+      const themeFromLocalStorage = isBrowser()
+        ? localStorage.getItem("theme")
+        : null;
 
       if (body) {
         themeFromLocalStorage
@@ -61,7 +63,7 @@ const isBrowser = () => typeof window !== "undefined"
   }, []);
   return (
     <div className="main-container">
-      <Header />
+      <Header pathName={location.pathname} />
       <Aside />
       <Banners />
       <TransitionGroup component={null}>

@@ -51,13 +51,6 @@
     }
 }
 
-@media screen and (max-width: 480px) {
-    .sidebar-container {
-        position: static;
-        height: 100%;
-        padding-bottom: 10px;
-    }
-}
 
 .sidebar-content {
     display: flex;
@@ -149,6 +142,15 @@
     color: var(--text-secondary);
 }
 
-body {
-    background: #000;
+@media screen and (max-width: 480px) {
+    .sidebar-container {
+        position: static;
+        height: 100%;
+        margin-top: 45vh;
+        padding-bottom: 10px;
+    }
+
+    .sidebar-typewriter-wrapper {
+        font-size: 10px;
+    }
 }

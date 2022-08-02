@@ -1,8 +1,9 @@
 import React, { FC, useState } from "react";
-import { FaRegSun, FaRegMoon } from "react-icons/fa";
+import { FaRegMoon, FaRegSun } from "react-icons/fa";
 import { Link } from "gatsby";
 import Switch from "../Switch";
 import "./index.css";
+
 const Header: FC = () => {
   const [isMenuOpened, setIsMenuOpened] = useState<boolean>(false);
   const handleMenu = (withoutTimer?: boolean) => {
@@ -15,13 +16,15 @@ const Header: FC = () => {
   };
   const navs: { name: string; path: string }[] = [
     { name: "Home", path: "/" },
-    { name: "Experience", path: "/experience" },
-    { name: "About", path: "/about" },
-    { name: "Contact", path: "/contact" },
+    { name: "SKills & Experience", path: "/experience/" },
+    { name: "Education & Certificates", path: "/about/" },
+    { name: "Contact", path: "/contact/" },
   ];
-  const isBrowser = () => typeof window !== "undefined"
+  const isBrowser = () => typeof window !== "undefined";
 
-  const themeFromLocalStorage = isBrowser()?localStorage.getItem("theme") :null;
+  const themeFromLocalStorage = isBrowser()
+    ? localStorage.getItem("theme")
+    : null;
   const [isToggled, setIsToggled] = useState(
     !(themeFromLocalStorage && themeFromLocalStorage === "light")
   );
@@ -52,6 +55,7 @@ const Header: FC = () => {
           {navs.map((nav, i) => (
             <li key={i}>
               <Link
+                partiallyActive={false}
                 onClick={() => handleMenu()}
                 to={nav.path}
                 className="list-button"

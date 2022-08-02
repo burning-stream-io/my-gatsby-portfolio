@@ -1,7 +1,8 @@
-import React, {FC, ReactNode, useRef} from "react";
-import "./index.css";
+import React, { FC, ReactNode, useRef } from 'react';
+import './index.css';
+
 type Props = {
-  type?: "button" | "submit" | "reset";
+  type?: 'button' | 'submit' | 'reset';
   title?: string;
   icon?: ReactNode;
   onClick?: () => void;
@@ -10,22 +11,15 @@ type Props = {
 };
 
 const defaultProps = {
-  title: "button",
+  title: 'button',
   icon: null,
   disabled: false,
 };
 
-const Button: FC<Props> = ({
-  title,
-  icon,
-  onClick,
-  type,
-  className,
-  disabled,
-}) => {
+const Button: FC<Props> = ({ title, icon, onClick, type, className, disabled }) => {
   const buttonRef = useRef<HTMLButtonElement>(null);
   const handleClick = () => {
-    console.log("clicked");
+    console.log('clicked');
     if (buttonRef.current && !buttonRef.current.disabled) {
       buttonRef.current.disabled = true;
       if (onClick) {
@@ -47,8 +41,8 @@ const Button: FC<Props> = ({
       onClick={onClick ? handleClick : undefined}
       type={type}
     >
-      <span className="button-title">{title}</span>
-      <span className="button-icon">{icon}</span>
+      <span className='button-title'>{title}</span>
+      <span className='button-icon'>{icon}</span>
     </button>
   );
 };

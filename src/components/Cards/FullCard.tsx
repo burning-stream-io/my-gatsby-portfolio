@@ -1,4 +1,4 @@
-import React, { FC, Fragment, ReactNode } from "react";
+import React, { FC, Fragment } from "react";
 
 type Props = {
   logo?: string;
@@ -35,7 +35,6 @@ const FullCard: FC<Props> = ({
   };
   return (
     <div className="full-card">
-      {/* lezzoo logo */}
       {logo || title || startDate || endDate ? (
         <div className="full-card-header">
           {logo && (
