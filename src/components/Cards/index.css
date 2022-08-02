@@ -113,20 +113,18 @@
 }
 
 .half-cards-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
 }
 
 .half-card {
-    width: 45%;
+    width: 100%;
     text-decoration: none;
     background-color: var(--primary);
     padding: 1.5rem;
     text-align: justify;
     border-radius: 5px;
-    margin-bottom: 10%;
 }
 
 .half-card-header {
@@ -255,6 +253,7 @@ a.half-card-caption:hover {
     }
 
     .half-cards-container {
+        display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
