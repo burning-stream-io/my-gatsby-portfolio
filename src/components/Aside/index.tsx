@@ -21,7 +21,19 @@ type Props = {
 const Aside: FC<Props> = ({ hide }) => {
   const [contactMeModal, setContactMeModal] = useState(false);
   const handleContactMeModal = () => {
-    setContactMeModal(!contactMeModal);
+    setContactMeModal((prev) => {
+      return !prev;
+    });
+  };
+  const handleOpenContactMeModal = () => {
+    if (!contactMeModal) {
+      handleContactMeModal();
+    }
+  };
+  const handleCloseContactMeModal = () => {
+    if (contactMeModal) {
+      handleContactMeModal();
+    }
   };
   const social = [
     {
@@ -131,13 +143,14 @@ const Aside: FC<Props> = ({ hide }) => {
         />
 
         <Button
-          onClick={handleContactMeModal}
+          handleClick={handleOpenContactMeModal}
           title="Contact me"
+          // disabled={contactMeModal}
           icon={<BsEnvelopeFill />}
         />
         <ContactMeModal
           isOpen={contactMeModal}
-          onClose={handleContactMeModal}
+          onClose={handleCloseContactMeModal}
         />
       </div>
     </div>

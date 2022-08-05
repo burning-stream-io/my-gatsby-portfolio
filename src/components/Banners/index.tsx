@@ -1,19 +1,17 @@
 import React, { ReactNode, useEffect, useRef, useState } from "react";
-import { graphql, useStaticQuery } from "gatsby";
 import IBannerData from "../../interfaces/IBannerData";
 import { renderRichText } from "gatsby-source-contentful/rich-text";
 import { BLOCKS } from "@contentful/rich-text-types";
-import { Options } from "@contentful/rich-text-react-renderer";
 import Lottie from "lottie-react";
 import scrollAnimation from "../../assets/scroll.json";
-
 import "./index.css";
 
 import { isBrowser } from "../../utilities";
+import useBannersQuery from "../../data/useBannersData";
 
 const Banners = () => {
   const [activeBanner, setActiveBanner] = useState<number>(0);
-  const options: Options = {
+  const options = {
     renderNode: {
       [BLOCKS.UL_LIST]: (_: any, children: ReactNode) => {
         return <ul className="banner-list">{children}</ul>;
@@ -37,34 +35,7 @@ const Banners = () => {
     }
   };
 
-  const data = useStaticQuery(graphql`
-    {
-      allContentfulBanner {
-        edges {
-          node {
-            title
-            icon {
-              file {
-                url
-                fileName
-                contentType
-              }
-            }
-            quotes {
-              raw
-            }
-            image {
-              file {
-                url
-                fileName
-                contentType
-              }
-            }
-          }
-        }
-      }
-    }
-  `);
+  const data = useBannersQuery();
   const banners: IBannerData[] = data.allContentfulBanner.edges;
   const sliderRef = useRef<NodeJS.Timer>();
 
