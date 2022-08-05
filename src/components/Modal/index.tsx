@@ -1,5 +1,12 @@
-import React, { FC } from "react";
-import ReactModal from "react-modal";
+// type Props = {
+//   children?: React.ReactNode;
+//   isOpen: boolean;
+//   onClose?: () => void;
+// };
+//
+
+import React, { FC, memo } from "react";
+import Portal from "../Portal";
 import "./index.css";
 
 type Props = {
@@ -7,22 +14,19 @@ type Props = {
   isOpen: boolean;
   onClose?: () => void;
 };
-
-ReactModal.setAppElement(`#___gatsby`);
-
 const Modal: FC<Props> = ({ children, isOpen, onClose }) => {
   return (
-    <ReactModal
-      isOpen={isOpen}
-      onRequestClose={onClose}
-      overlayClassName="modal-overlay"
-      className="modal-content"
-      contentLabel="Modal"
-      closeTimeoutMS={200}
-    >
-      {children}
-    </ReactModal>
+    <Portal>
+      {isOpen && (
+        <>
+          <div className="modal-overlay" onClick={onClose} />
+          <div className="modal-container">
+            <div className="modal-content">{children}</div>
+          </div>
+        </>
+      )}
+    </Portal>
   );
 };
 
-export default Modal;
+export default memo(Modal);
