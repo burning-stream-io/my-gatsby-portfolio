@@ -2,31 +2,29 @@ import React from "react";
 import { FullCard } from "../components/Cards";
 import Title from "../components/Title";
 import "../styles/index.css";
+import useSkillsData from "../data/useSkillsData";
+import ISkillsData from "../interfaces/ISkillsData";
 
 const Experience = () => {
+  const data = useSkillsData();
+  const skills: ISkillsData[] = data.allContentfulSkills.edges;
+  console.log(skills);
   return (
     <div className="container">
       <Title title={"Skills"} />
-      <FullCard
-        title="Front-End"
-        // subtitle="\n"
-        // titleHref="http://su.edu.krd/"
-        logo="https://cdn-icons.flaticon.com/png/512/5433/premium/5433819.png?token=exp=1659350973~hmac=197f498e875e9841c23a42e743eabe67"
-        caption="HTML, CSS, Bootstrap, Materialize, Tailwind, JS, TS, GSAP, React, Framer-Motion, React-Native, Reanimated, CI/CD, GatsbyJs ,NextJs , Redux, Saga."
-      />
-      <br />
-      <FullCard
-        title="Back-End"
-        logo="https://cdn-icons.flaticon.com/png/512/5432/premium/5432506.png?token=exp=1659351037~hmac=54fb65d9c6f34ac6383996ad27182269"
-        caption="NodeJs/Express, NestJs, MySQL, PostgreSQL, Type ORM, MongoDB, Firebase"
-      />
-      <br />
-
-      <FullCard
-        title="Others"
-        logo="https://cdn-icons.flaticon.com/png/512/5433/premium/5433784.png?token=exp=1659353339~hmac=80b4e7afa6a3825ed793dc8a0849f217"
-        caption="Jest, Detox, Figma, Framer, Affinity Designer, Jira, BitBucket"
-      />
+      {skills && skills.length > 0
+        ? skills.map((skill: ISkillsData, index) => (
+            <div key={index}>
+              <FullCard
+                key={index}
+                title={skill.node.title}
+                logo={skill.node.icon.file.url}
+                caption={skill.node.caption}
+              />
+              <br />
+            </div>
+          ))
+        : null}
 
       <Title title={"Experience"} />
       <FullCard
