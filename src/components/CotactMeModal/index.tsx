@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Modal from "../Modal";
 import contactLottie from "../../assets/contact.json";
-import Lottie from "lottie-react";
 import {
   Field,
   FieldProps,
@@ -17,6 +16,8 @@ import sentLottie from "../../assets/sent.json";
 import failedLottie from "../../assets/failed.json";
 import * as Yup from "yup";
 import _ from "lodash";
+import { IoCloseCircleOutline } from "react-icons/io5";
+import OptimizedLottie from "../OptimizedLottie";
 
 type Props = {
   isOpen: boolean;
@@ -164,8 +165,12 @@ const ContactMeModal = ({ isOpen, onClose }: Props) => {
   return (
     <div>
       <Modal isOpen={isOpen} onClose={onClose}>
+        <div className="close-contact-modal" onClick={onClose}>
+          <IoCloseCircleOutline color={"#e4343e"} />
+        </div>
         <div className="content-container">
-          <Lottie
+          <OptimizedLottie
+            autoPlay={isOpen}
             className="contact-lottie"
             animationData={contactLottie}
             loop={true}
@@ -174,20 +179,20 @@ const ContactMeModal = ({ isOpen, onClose }: Props) => {
             <div className="contact-status">
               <div className="contact-status-lottie">
                 {isLoading ? (
-                  <Lottie
+                  <OptimizedLottie
                     className="contact-lottie"
                     animationData={loadingLottie}
                     loop={true}
                   />
                 ) : isSent ? (
-                  <Lottie
+                  <OptimizedLottie
                     className="contact-lottie"
                     animationData={sentLottie}
                     loop={false}
                     onComplete={handleClose}
                   />
                 ) : (
-                  <Lottie
+                  <OptimizedLottie
                     className="contact-lottie"
                     animationData={failedLottie}
                     loop={false}
