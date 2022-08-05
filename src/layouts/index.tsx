@@ -63,7 +63,7 @@ const layout: FC<Props> = ({ children, location }) => {
   }, []);
   return (
     <div className="main-container">
-      <Header pathName={location.pathname} />
+      <Header />
       <Aside />
       <Banners />
       <TransitionGroup component={null}>
