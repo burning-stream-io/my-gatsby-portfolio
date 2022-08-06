@@ -12,6 +12,7 @@ const useUser = () => {
               icon {
                 file {
                   url
+                  fileName
                 }
               }
               link
@@ -20,6 +21,19 @@ const useUser = () => {
             residence
             city
             age
+            about {
+              about
+            }
+            stack {
+              title
+              subtitle
+              icon {
+                file {
+                  fileName
+                  url
+                }
+              }
+            }
           }
         }
       }

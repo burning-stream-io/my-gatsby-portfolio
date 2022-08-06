@@ -106,18 +106,23 @@
 
 .sidebar-social-item {
     margin-right: 1rem;
+    /*border: 1px solid var(--text-primary);*/
+    width: 27px;
+    height: 27px;
+    border-radius: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .sidebar-social-item-icon {
-    width: 18px;
-    height: 18px;
-    margin-right: 0.5rem;
-    color: var(--text-primary);
-    transition: color 0.3s ease;
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease;
 }
 
-.sidebar-social-item-icon:hover {
-    color: var(--text-secondary);
+.sidebar-social-item:hover .sidebar-social-item-icon {
+    transform: scale(0.8);
 }
 
 /* grid with two column */
