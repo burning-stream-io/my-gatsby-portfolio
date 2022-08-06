@@ -1,4 +1,4 @@
-import React, { FC, ReactNode, useEffect, useState } from "react";
+import React, { FC, ReactNode, useState } from "react";
 import "./index.css";
 
 type Props = {
@@ -27,7 +27,6 @@ const Button: FC<Props> = ({
   const [isDisabled, setIsDisabled] = useState(false);
 
   const handleOnClick = () => {
-    console.log(isDisabled);
     if (!isDisabled) {
       setIsDisabled(true);
       if (handleClick) {
@@ -38,9 +37,6 @@ const Button: FC<Props> = ({
       }, 1000);
     }
   };
-  useEffect(() => {
-    console.log("disabled", isDisabled);
-  }, [isDisabled]);
 
   return (
     <button

@@ -19,7 +19,6 @@ const Experience = () => {
       <Title title={"Experience"} />
       {experiences && experiences.length > 0
         ? experiences.map((experience, index) => {
-            console.log(experience.node.startedDate);
             return (
               <div>
                 <FullCard

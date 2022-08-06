@@ -8,7 +8,6 @@ import IUser from "../interfaces/IUser";
 const Home: FC = () => {
   const userData = useUser();
   const user: IUser = userData.allContentfulUser.edges[0].node;
-  console.log(user);
   return (
     <div>
       <Title title={"About me"} />

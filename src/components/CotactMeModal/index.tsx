@@ -142,7 +142,6 @@ const ContactMeModal = ({ isOpen, onClose }: Props) => {
     values: FormValues,
     actions: FormikHelpers<FormValues>
   ) => Promise<void> = async (values, actions) => {
-    console.log("values", values);
     setIsLoading(true);
     try {
       await send("Gmail", emailTemplateId, values, emailPublicKey);
