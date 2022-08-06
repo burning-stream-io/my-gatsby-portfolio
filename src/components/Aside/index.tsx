@@ -85,13 +85,6 @@ const Aside: FC<Props> = ({ hide }) => {
                 alt={account.icon.file.fileName}
                 className={"sidebar-social-item-icon"}
                 src={account.icon.file.url}
-                // src={
-                //   index === 1
-                //     ? "https://cdn-icons.flaticon.com/png/512/3536/premium/3536424.png?token=exp=1659800357~hmac=59143610bfd890c4ee705211c3f86e53"
-                //     : index === 0
-                //     ? "https://cdn-icons-png.flaticon.com/512/5968/5968866.png"
-                //     : "https://cdn-icons.flaticon.com/png/512/3536/premium/3536505.png?token=exp=1659799607~hmac=7ef35031e9a0367b3ae13a39531bbb94"
-                // }
               />
             </a>
           ))}
