@@ -42,7 +42,7 @@ const Banners = () => {
   useEffect(() => {
     sliderRef.current = setInterval(() => {
       setActiveBanner((prevState) => (prevState + 1) % banners.length);
-    }, 5000);
+    }, 15000);
 
     return () => {
       clearInterval(sliderRef.current);
