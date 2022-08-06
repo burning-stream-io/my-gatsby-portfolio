@@ -1,6 +1,6 @@
 import IContentfulImage from "./IContentfulImage";
 
-export default interface ISkillsData {
+export default interface ISkill {
   node: {
     title: string;
     icon: IContentfulImage;

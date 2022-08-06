@@ -1,6 +1,6 @@
 import IContentfulImage from "./IContentfulImage";
 
-export default interface IExperienceData {
+export default interface IExperience {
   node: {
     company: string;
     jobTitle: string;
