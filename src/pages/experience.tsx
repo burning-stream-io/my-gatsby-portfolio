@@ -2,16 +2,16 @@ import React from "react";
 import { FullCard } from "../components/Cards";
 import Title from "../components/Title";
 import "../styles/index.css";
-import useSkills from "../data/useSkillsData";
-import ISkillsData from "../interfaces/ISkillsData";
-import useExperiences from "../data/useExperienceData";
-import IExperienceData from "../interfaces/IExperienceData";
+import useSkills from "../data/useSkills";
+import ISkill from "../interfaces/ISkill";
+import useExperiences from "../data/useExperiences";
+import IExperience from "../interfaces/IExperience";
 
 const Experience = () => {
   const skillsData = useSkills();
   const experienceData = useExperiences();
-  const skills: ISkillsData[] = skillsData.allContentfulSkills.edges;
-  const experiences: IExperienceData[] =
+  const skills: ISkill[] = skillsData.allContentfulSkills.edges;
+  const experiences: IExperience[] =
     experienceData.allContentfulExperience.edges;
   return (
     <div className="container">
@@ -39,7 +39,7 @@ const Experience = () => {
       <Title title={"Skills"} />
       <br />
       {skills && skills.length > 0
-        ? skills.map((skill: ISkillsData, index) => (
+        ? skills.map((skill: ISkill, index) => (
             <div key={index}>
               <FullCard
                 key={index}

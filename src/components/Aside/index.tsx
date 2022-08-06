@@ -3,22 +3,21 @@ import "./index.css";
 import Typewriter from "typewriter-effect";
 import { StaticImage } from "gatsby-plugin-image";
 import HorizontalLine from "../HorizontalLine";
-import {
-  BsEnvelopeFill,
-  BsGithub,
-  BsLinkedin,
-  BsTwitter,
-} from "react-icons/bs";
+import { BsEnvelopeFill } from "react-icons/bs";
 import Button from "../Button";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import ContactMeModal from "../CotactMeModal";
+import useUser from "../../data/useUser";
+import IUser from "../../interfaces/IUser";
 
 gsap.registerPlugin(ScrollTrigger);
 type Props = {
   hide?: boolean;
 };
 const Aside: FC<Props> = ({ hide }) => {
+  const userData = useUser();
+  const user: IUser = userData.allContentfulUser.edges[0].node;
   const [contactMeModal, setContactMeModal] = useState(false);
   const handleContactMeModal = () => {
     setContactMeModal((prev) => {
@@ -35,38 +34,6 @@ const Aside: FC<Props> = ({ hide }) => {
       handleContactMeModal();
     }
   };
-  const social = [
-    {
-      name: "Github",
-      url: "https://github.com/Hewr-Srood",
-      icon: <BsGithub className="sidebar-social-item-icon" />,
-    },
-    {
-      name: "Twitter",
-      url: "",
-      icon: <BsTwitter className="sidebar-social-item-icon" />,
-    },
-    {
-      name: "LinkedIn",
-      url: "https://www.linkedin.com/in/hewr-srood/",
-      icon: <BsLinkedin className="sidebar-social-item-icon" />,
-    },
-  ];
-
-  const userInfo = [
-    {
-      name: "residence",
-      value: "Iraq",
-    },
-    {
-      name: "city",
-      value: "Erbil",
-    },
-    {
-      name: "age",
-      value: "22",
-    },
-  ];
 
   useEffect(() => {
     if (window.innerWidth > 768) {
@@ -91,16 +58,12 @@ const Aside: FC<Props> = ({ hide }) => {
         <div className="sidebar-avatar">
           <StaticImage src="../../images/user.jpeg" alt="myself" />
         </div>
-        <h5 className="sidebar-title">Hewr Srood</h5>
+        <h5 className="sidebar-title">{user.fullName}</h5>
         <Typewriter
           options={{
             wrapperClassName: "sidebar-typewriter-wrapper",
             cursorClassName: "sidebar-typewriter-cursor",
-            strings: [
-              "Software Engineer",
-              "Web | React developer",
-              "Mobile | React Native developer",
-            ],
+            strings: user.titles,
             autoStart: true,
             loop: true,
           }}
@@ -110,15 +73,19 @@ const Aside: FC<Props> = ({ hide }) => {
           margin="3rem 0"
         />
         <div className="sidebar-social">
-          {social.map((item) => (
+          {user.formalAccounts.map((account, index) => (
             <a
-              key={item.name}
-              href={item.url}
+              key={index}
+              href={account.link}
               target="_blank"
               rel="noopener noreferrer"
               className="sidebar-social-item"
             >
-              {item.icon}
+              <img
+                alt={account.icon.file.fileName}
+                className={"sidebar-social-item-icon"}
+                src={account.icon.file.url}
+              />
             </a>
           ))}
         </div>
@@ -128,14 +95,24 @@ const Aside: FC<Props> = ({ hide }) => {
         />
         {/* user location */}
         <div className="sidebar-user-info">
-          {userInfo.map((item) => (
-            <div key={item.name} className="sidebar-user-info-item">
-              <span className="sidebar-user-info-item-name">{item.name}</span>
-              <span className="sidebar-user-info-item-value text-right">
-                {item.value}
-              </span>
-            </div>
-          ))}
+          <div className="sidebar-user-info-item">
+            <span className="sidebar-user-info-item-name">Residence</span>
+            <span className="sidebar-user-info-item-value text-right">
+              {user.residence}
+            </span>
+          </div>
+          <div className="sidebar-user-info-item">
+            <span className="sidebar-user-info-item-name">City</span>
+            <span className="sidebar-user-info-item-value text-right">
+              {user.city}
+            </span>
+          </div>
+          <div className="sidebar-user-info-item">
+            <span className="sidebar-user-info-item-name">Age</span>
+            <span className="sidebar-user-info-item-value text-right">
+              {user.age}
+            </span>
+          </div>
         </div>
         <HorizontalLine
           borderColor="rgba(225, 225, 235, 0.9)"
@@ -145,7 +122,6 @@ const Aside: FC<Props> = ({ hide }) => {
         <Button
           handleClick={handleOpenContactMeModal}
           title="Contact me"
-          // disabled={contactMeModal}
           icon={<BsEnvelopeFill />}
         />
         <ContactMeModal

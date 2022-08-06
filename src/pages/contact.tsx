@@ -1,63 +1,49 @@
 import React from "react";
 import { HalfCard } from "../components/Cards";
 import Title from "../components/Title";
+import useMainAccounts from "../data/useMainAccounts";
+import IAccount from "../interfaces/IAccount";
+import useSocialAccounts from "../data/useSocialAccounts";
 
 const Contact = () => {
+  const mainAccountsData = useMainAccounts();
+  const mainAccounts: IAccount[] =
+    mainAccountsData.allContentfulMainAccounts.edges;
+  const socialAccountsData = useSocialAccounts();
+  const socialAccounts: IAccount[] =
+    socialAccountsData.allContentfulSocialAccounts.edges;
   return (
     <div>
+      <br />
       <Title title={"Get in touch"} />
-      {/*<div className="half-cards-container">*/}
-      {/*    <HalfCard*/}
-      {/*        icon="https://cdn.worldvectorlogo.com/logos/outlook-1.svg"*/}
-      {/*        title="Email"*/}
-      {/*        subtitle="Hewr_s@outlook.com"*/}
-      {/*        link="mailto:Hewr_s@outlook.com"*/}
-      {/*    />*/}
-      {/*    <HalfCard*/}
-      {/*        icon="https://cdn.worldvectorlogo.com/logos/whatsapp-icon.svg"*/}
-      {/*        title="WhatsApp"*/}
-      {/*        subtitle="+964 (750) 861-4371"*/}
-      {/*        link="tel:+964-750-861-4371"*/}
-      {/*    />*/}
-      {/*</div>*/}
+      <div className="half-cards-container">
+        {mainAccounts && mainAccounts.length > 0
+          ? mainAccounts.map((account, index) => (
+              <HalfCard
+                key={index}
+                title={account.node.title}
+                subtitle={account.node.subtitle}
+                icon={account.node.icon.file.url}
+                link={account.node.link}
+              />
+            ))
+          : null}
+      </div>
       <Title title={"Follow me on"} />
       <div className="half-cards-container">
-        {/* facebook */}
-        <HalfCard
-          icon="https://cdn.worldvectorlogo.com/logos/facebook-2020-1-1.svg"
-          title="Facebook"
-          subtitle="Hewr Srood"
-          link="https://www.facebook.com/hewr.srood"
-        />
-        {/* instagram */}
-        <HalfCard
-          icon="https://cdn.worldvectorlogo.com/logos/instagram-5.svg"
-          title="Instagram"
-          subtitle="hewr_srood"
-          link="https://www.instagram.com/hewr_srood/"
-        />
-        {/* codepen */}
-        <HalfCard
-          icon="https://cdn.worldvectorlogo.com/logos/codepen-icon.svg"
-          title="Codepen"
-          subtitle="hewr_srood"
-          link="https://codepen.io/hewr-srood/"
-        />
-        {/* codesandbox */}
-        <HalfCard
-          icon="https://cdn4.iconfinder.com/data/icons/logos-brands-5/24/codesandbox-512.png"
-          title="Codesandbox"
-          subtitle="hewr_srood"
-          link="https://codesandbox.io/u/Hewr-Srood"
-        />
-        {/* expo */}
-        <HalfCard
-          icon="https://play-lh.googleusercontent.com/algsmuhitlyCU_Yy3IU7-7KYIhCBwx5UJG4Bln-hygBjjlUVCiGo1y8W5JNqYm9WW3s"
-          title="Expo"
-          subtitle="hewr"
-          link="https://expo.dev/@hewr?tab=snacks"
-        />
+        {socialAccounts && socialAccounts.length > 0
+          ? socialAccounts.map((account, index) => (
+              <HalfCard
+                key={index}
+                title={account.node.title}
+                subtitle={account.node.subtitle}
+                icon={account.node.icon.file.url}
+                link={account.node.link}
+              />
+            ))
+          : null}
       </div>
+      <br />
     </div>
   );
 };
