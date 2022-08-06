@@ -1,6 +1,6 @@
 import { graphql, useStaticQuery } from "gatsby";
 
-const useSkillsData = () => {
+const useSkills = () => {
   return useStaticQuery(graphql`
     {
       allContentfulSkills(sort: { order: DESC, fields: id }) {
@@ -19,4 +19,4 @@ const useSkillsData = () => {
     }
   `);
 };
-export default useSkillsData;
+export default useSkills;

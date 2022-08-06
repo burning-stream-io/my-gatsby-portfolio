@@ -1,6 +1,6 @@
 import { graphql, useStaticQuery } from "gatsby";
 
-const useExperienceData = () => {
+const useExperiences = () => {
   return useStaticQuery(graphql`
     {
       allContentfulExperience(sort: { order: DESC, fields: id }) {
@@ -21,4 +21,4 @@ const useExperienceData = () => {
     }
   `);
 };
-export default useExperienceData;
+export default useExperiences;

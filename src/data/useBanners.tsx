@@ -1,6 +1,6 @@
 import { graphql, useStaticQuery } from "gatsby";
 
-const useBannersData = () => {
+const useBanners = () => {
   return useStaticQuery(graphql`
     {
       allContentfulBanner {
@@ -30,4 +30,4 @@ const useBannersData = () => {
     }
   `);
 };
-export default useBannersData;
+export default useBanners;

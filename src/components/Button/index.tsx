@@ -1,48 +1,56 @@
-import React, { FC, ReactNode, useRef } from 'react';
-import './index.css';
+import React, { FC, ReactNode, useEffect, useState } from "react";
+import "./index.css";
 
 type Props = {
-  type?: 'button' | 'submit' | 'reset';
+  type?: "button" | "submit" | "reset";
   title?: string;
   icon?: ReactNode;
-  onClick?: () => void;
+  handleClick?: () => void;
   className?: string;
   disabled?: boolean;
 };
 
 const defaultProps = {
-  title: 'button',
+  title: "button",
   icon: null,
   disabled: false,
 };
 
-const Button: FC<Props> = ({ title, icon, onClick, type, className, disabled }) => {
-  const buttonRef = useRef<HTMLButtonElement>(null);
-  const handleClick = () => {
-    console.log('clicked');
-    if (buttonRef.current && !buttonRef.current.disabled) {
-      buttonRef.current.disabled = true;
-      if (onClick) {
-        onClick();
+const Button: FC<Props> = ({
+  title,
+  icon,
+  handleClick,
+  type,
+  className,
+  disabled,
+}) => {
+  const [isDisabled, setIsDisabled] = useState(false);
+
+  const handleOnClick = () => {
+    console.log(isDisabled);
+    if (!isDisabled) {
+      setIsDisabled(true);
+      if (handleClick) {
+        handleClick();
       }
       setTimeout(() => {
-        if (buttonRef.current) {
-          buttonRef.current.disabled = false;
-        }
+        setIsDisabled(false);
       }, 1000);
     }
   };
+  useEffect(() => {
+    console.log("disabled", isDisabled);
+  }, [isDisabled]);
 
   return (
     <button
-      ref={buttonRef}
-      disabled={disabled}
+      disabled={isDisabled}
       className={`button ${className}`}
-      onClick={onClick ? handleClick : undefined}
+      onClick={handleClick ? handleOnClick : undefined}
       type={type}
     >
-      <span className='button-title'>{title}</span>
-      <span className='button-icon'>{icon}</span>
+      <span className="button-title">{title}</span>
+      <span className="button-icon">{icon}</span>
     </button>
   );
 };

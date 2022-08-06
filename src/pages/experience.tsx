@@ -2,14 +2,14 @@ import React from "react";
 import { FullCard } from "../components/Cards";
 import Title from "../components/Title";
 import "../styles/index.css";
-import useSkillsData from "../data/useSkillsData";
+import useSkills from "../data/useSkillsData";
 import ISkillsData from "../interfaces/ISkillsData";
-import useExperienceData from "../data/useExperienceData";
+import useExperiences from "../data/useExperienceData";
 import IExperienceData from "../interfaces/IExperienceData";
 
 const Experience = () => {
-  const skillsData = useSkillsData();
-  const experienceData = useExperienceData();
+  const skillsData = useSkills();
+  const experienceData = useExperiences();
   const skills: ISkillsData[] = skillsData.allContentfulSkills.edges;
   const experiences: IExperienceData[] =
     experienceData.allContentfulExperience.edges;
