@@ -22,6 +22,7 @@
     "gatsby-plugin-image": "^2.18.0",
     "gatsby-plugin-layout": "^3.18.0",
     "gatsby-plugin-lodash": "^5.19.0",
+    "gatsby-plugin-manifest": "^4.20.0",
     "gatsby-plugin-portal": "^1.0.7",
     "gatsby-plugin-sharp": "^4.18.0",
     "gatsby-source-contentful": "^7.16.0",
@@ -42,6 +43,7 @@
     "@types/react-dom": "^18.0.5",
     "@types/react-modal": "^3.13.1",
     "@types/react-transition-group": "^4.4.5",
+    "gatsby-plugin-favicons": "^2.0.0",
     "npm": "^8.14.0",
     "typescript": "^4.7.4"
   }

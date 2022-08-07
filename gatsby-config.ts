@@ -38,6 +38,31 @@ const config: GatsbyConfig = {
       },
     },
 
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        icon: `src/assets/logo.svg`,
+        icons: [
+          {
+            src: `src/assets/favicons/android-chrome-192x192.png`,
+            sizes: `192x192`,
+            type: `image/png`,
+          },
+          {
+            src: `src/assets/favicons/android-chrome-512x512.png`,
+            sizes: `512x512`,
+            type: `image/png`,
+          },
+        ],
+        name: `Hewr Srood`,
+        short_name: `Hewr`,
+        description: `A Gatsby Portfolio`,
+        start_url: `/`,
+        background_color: `#002739`,
+        theme_color: `#a2466c`,
+        display: `standalone`,
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-image`,
