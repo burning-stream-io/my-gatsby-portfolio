@@ -17,7 +17,7 @@ const Header: FC = () => {
   const navs: { name: string; path: string }[] = [
     { name: "Home", path: "/" },
     { name: "SKills & Experience", path: "/experience/" },
-    { name: "Education & Certificates", path: "/about/" },
+    { name: "Education & Certificates", path: "/education/" },
     { name: "Contact", path: "/contact/" },
   ];
   const isBrowser = () => typeof window !== "undefined";

@@ -23,7 +23,7 @@ const FullCard: FC<Props> = ({
 }) => {
   const renderCaption = () => {
     if (caption) {
-      return caption.split("\n").map((item, index) => {
+      return caption.split("\\n").map((item, index) => {
         return (
           <Fragment key={index}>
             {item}
@@ -62,6 +62,7 @@ const FullCard: FC<Props> = ({
         </div>
       ) : null}
       {caption && <p className="full-card-caption">{renderCaption()}</p>}
+      <br />
       {captions && (
         <ul className="full-card-list">
           {captions.map((c, i) =>

@@ -12,6 +12,7 @@ export default interface IUser {
   about: {
     about: string;
   };
+  avatar: IContentfulImage;
   stack: {
     title: string;
     subtitle: string;

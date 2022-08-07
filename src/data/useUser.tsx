@@ -8,6 +8,12 @@ const useUser = () => {
           node {
             fullName
             name
+            avatar {
+              file {
+                url
+                fileName
+              }
+            }
             formalAccounts {
               icon {
                 file {

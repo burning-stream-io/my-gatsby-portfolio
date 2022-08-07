@@ -1,7 +1,6 @@
 import React, { FC, useEffect, useState } from "react";
 import "./index.css";
 import Typewriter from "typewriter-effect";
-import { StaticImage } from "gatsby-plugin-image";
 import HorizontalLine from "../HorizontalLine";
 import { BsEnvelopeFill } from "react-icons/bs";
 import Button from "../Button";
@@ -56,9 +55,10 @@ const Aside: FC<Props> = ({ hide }) => {
     <div className={`sidebar-container ${hide ? "hide" : ""}`}>
       <div className="sidebar-content">
         <div className="sidebar-avatar">
-          <StaticImage src="../../images/user.jpeg" alt="myself" />
+          <img src={user.avatar.file.url} alt={user.avatar.file.fileName} />
         </div>
         <h5 className="sidebar-title">{user.fullName}</h5>
+        <br />
         <Typewriter
           options={{
             wrapperClassName: "sidebar-typewriter-wrapper",

@@ -1,7 +1,7 @@
 .sidebar-container {
     position: sticky;
     z-index: 2;
-    width: 22rem;
+    width: 21rem;
     height: 90vh;
     top: 200px;
     overflow: visible;
@@ -60,21 +60,17 @@
 }
 
 .sidebar-avatar {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
     overflow: hidden;
-    -webkit-mask-image: -webkit-gradient(
-            linear,
-            left top,
-            left bottom,
-            from(#fff),
-            color-stop(0.5, #fff),
-            to(#fff)
-    );
-    border: 0.1px solid var(--secondary);
-    background-color: var(--secondary);
+    background-color: var(--text-tertiary);
     margin-bottom: 10px;
+    box-shadow: 0 2px 4px 2px rgb(0 0 0 / 15%);
+}
+
+.sidebar-avatar img {
+    width: 100%;
 }
 
 .sidebar-title {
