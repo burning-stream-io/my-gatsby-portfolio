@@ -125,8 +125,8 @@ const renderForm = ({ errors, isValid }: FormikProps<FormValues>) => {
   );
 };
 const ContactMeModal = ({ isOpen, onClose }: Props) => {
-  const emailTemplateId = process.env.GATSBY_EMAIL_TEMPLATE_ID;
-  const emailPublicKey = process.env.GATSBY_EMAIL_PUBLIC_KEY;
+  const emailTemplateId = process.env.GATSBY_EMAIL_TEMPLATE_ID || "";
+  const emailPublicKey = process.env.GATSBY_EMAIL_PUBLIC_KEY || "";
   const [isLoading, setIsLoading] = useState(false);
   const [isSent, setIsSent] = useState(false);
   const [isFailed, setIsFailed] = useState(false);
@@ -145,7 +145,7 @@ const ContactMeModal = ({ isOpen, onClose }: Props) => {
     console.log("hey", emailTemplateId, emailPublicKey);
     setIsLoading(true);
     try {
-      await send("Gmail", emailTemplateId || "", values, emailPublicKey || "");
+      await send("Gmail", emailTemplateId, values, emailPublicKey);
       await actions.setSubmitting(false);
       await actions.resetForm();
       await setIsLoading(false);
