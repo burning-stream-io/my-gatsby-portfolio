@@ -150,6 +150,7 @@ const ContactMeModal = ({ isOpen, onClose }: Props) => {
       await setIsLoading(false);
       await setIsSent(true);
     } catch (err) {
+      console.log(err);
       await actions.setSubmitting(false);
       await actions.resetForm();
       await setIsLoading(false);
