@@ -1,21 +1,27 @@
-import React, { FC, useEffect, useState } from "react";
+import React, {FC, useState} from "react";
 import "./index.css";
 import Typewriter from "typewriter-effect";
 import HorizontalLine from "../HorizontalLine";
-import { BsEnvelopeFill } from "react-icons/bs";
+import {BsEnvelopeFill} from "react-icons/bs";
 import Button from "../Button";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+// import gsap from "gsap";
+// import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import ContactMeModal from "../CotactMeModal";
 import useUser from "../../data/useUser";
 import IUser from "../../interfaces/IUser";
+import {motion, useScroll, useTransform} from "framer-motion";
 
-gsap.registerPlugin(ScrollTrigger);
+// gsap.registerPlugin(ScrollTrigger);
 type Props = {
   hide?: boolean;
 };
 const Aside: FC<Props> = ({ hide }) => {
   const userData = useUser();
+  const { scrollYProgress } = useScroll();
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.7], {
+    clamp: false,
+  });
+  // const scale = useSpring(transformedScale);
   const user: IUser = userData.allContentfulUser.edges[0].node;
   const [contactMeModal, setContactMeModal] = useState(false);
   const handleContactMeModal = () => {
@@ -34,25 +40,31 @@ const Aside: FC<Props> = ({ hide }) => {
     }
   };
 
-  useEffect(() => {
-    if (window.innerWidth > 768) {
-      gsap.to(".sidebar-container", {
-        scrollTrigger: {
-          trigger: ".sidebar-container",
-          start: 50,
-          end: 200,
-          scrub: 3,
-          toggleActions: "restart pause reverse pause",
-        },
-        ease: "power2.out",
-        scale: 0.7,
-        top: "10vh",
-        borderRadius: 10,
-      });
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (window.innerWidth > 768) {
+  //     gsap.to(".sidebar-container", {
+  //       scrollTrigger: {
+  //         trigger: ".sidebar-container",
+  //         start: 50,
+  //         end: 200,
+  //         scrub: 3,
+  //         toggleActions: "restart pause reverse pause",
+  //       },
+  //       ease: "power2.out",
+  //       scale: 0.7,
+  //       top: "10vh",
+  //       borderRadius: 10,
+  //     });
+  //   }
+  // }, []);
   return (
-    <div className={`sidebar-container ${hide ? "hide" : ""}`}>
+    <motion.div
+      className={`sidebar-container ${hide ? "hide" : ""}`}
+      initial="hidden"
+      whileInView="visible"
+      style={{ scale }}
+      transition={{ delay: 1, duration: 0.5 }}
+    >
       <div className="sidebar-content">
         <div className="sidebar-avatar">
           <img src={user.avatar.file.url} alt={user.avatar.file.fileName} />
@@ -129,7 +141,7 @@ const Aside: FC<Props> = ({ hide }) => {
           onClose={handleCloseContactMeModal}
         />
       </div>
-    </div>
+    </motion.div>
   );
 };
 

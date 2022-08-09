@@ -18,6 +18,7 @@
   "dependencies": {
     "@emailjs/browser": "^3.6.2",
     "formik": "^2.2.9",
+    "framer-motion": "^7.0.0",
     "gatsby": "^4.19.2",
     "gatsby-plugin-image": "^2.18.0",
     "gatsby-plugin-layout": "^3.18.0",
